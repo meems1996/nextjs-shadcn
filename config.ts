@@ -1,6 +1,7 @@
-export const config = {
+export const appRoutes = {
     routes: {
-        home: "/",
-        dashboard: "/dashboard"
+        tools: "/tools",
+        generations: "/generation",
+        settings: "/settings",
     },
 };
