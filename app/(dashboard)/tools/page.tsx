@@ -7,7 +7,7 @@ export default function ToolsPage() {
       <h1 className="text-2xl font-bold mb-4">Tools</h1>
       <div className="flex flex-wrap gap-4">
       {toolsConfig.map((tool) => (
-        <div className="w-[300px]" key={tool.id}>
+        <div className="w-[400px]" key={tool.id}>
           <ToolCard
             key={tool.id}
             title={tool.overview.title}
@@ -27,14 +27,13 @@ const ToolCard = ({ name, description, icon, overview}: Tool) => {
   return (
       <Link
           href={`/tools/${name}`}
-          className="flex items-center justify-between p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+          className="flex h-full items-center flex-col justify-between p-4 border rounded-lg shadow-sm hover:shadow-md hover:shadow-pink-300 hover:border-pink-400 transition-shadow duration-200"
           >
           <div>
-              <h2>{name}</h2>
-              <p>{description}</p>
-              <div>{icon}</div>
-              <p>Features:</p>
-              <ul>
+              <h2 className="text-lg font-semibold mb-2">{icon} {name}</h2>
+              <p className="mb-2 text-sm text-gray-600">{description}</p>
+              <p className="text-sm font-medium">Features:</p>
+              <ul className="list-disc list-inside text-sm text-gray-700">
                   {overview.map((feature, index) => (
                       <li key={index}>{feature}</li>
                   ))}
